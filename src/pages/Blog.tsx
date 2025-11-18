@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "lucide-react";
+import { PageHero } from "@/components/PageHero";
 
 const blogPosts = [
   {
@@ -58,10 +59,13 @@ const blogPosts = [
 
 const Blog = () => {
   return (
-    <div className="min-h-screen bg-background pb-20">
+    <div className="min-h-screen bg-background">
       <Navigation />
-      <main className="container mx-auto px-6 py-24">
-        <h1 className="text-6xl md:text-8xl font-display font-bold mb-8">Blog</h1>
+      <PageHero 
+        title="Blog"
+        description="Articles, guides et conseils sur l'accessibilité web. Restez informé des dernières tendances et bonnes pratiques pour un numérique inclusif."
+      />
+      <main className="container mx-auto px-6 py-16">
         
         <div className="max-w-4xl mb-16">
           <p className="text-xl leading-relaxed">

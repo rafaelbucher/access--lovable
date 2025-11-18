@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { z } from "zod";
+import { PageHero } from "@/components/PageHero";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Le nom est requis").max(100, "Le nom ne doit pas dépasser 100 caractères"),
@@ -74,11 +75,13 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background pb-20">
+    <div className="min-h-screen bg-background">
       <Navigation />
-      <main className="container mx-auto px-6 py-24">
-        <h1 className="text-6xl md:text-8xl font-display font-bold mb-8">Contact</h1>
-        
+      <PageHero 
+        title="Contact"
+        description="Contactez-nous pour discuter de vos besoins en accessibilité web. Notre équipe est à votre disposition pour vous accompagner dans vos projets."
+      />
+      <main className="container mx-auto px-6 py-16">
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl">
           {/* Contact Info */}
           <div className="space-y-8">

@@ -3,21 +3,18 @@ import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2 } from "lucide-react";
+import { PageHero } from "@/components/PageHero";
 
 const Services = () => {
   return (
-    <div className="min-h-screen bg-background pb-20">
+    <div className="min-h-screen bg-background">
       <Navigation />
-      <main className="container mx-auto px-6 py-24">
-        <h1 className="text-6xl md:text-8xl font-display font-bold mb-8">Nos Services</h1>
-        
-        <div className="max-w-4xl mb-16">
-          <p className="text-xl leading-relaxed">
-            Access+ propose une gamme complète de services en accessibilité numérique, 
-            adaptés aux besoins de votre organisation. De l'audit initial à l'accompagnement 
-            dans la mise en conformité, nous sommes à vos côtés à chaque étape.
-          </p>
-        </div>
+      <PageHero 
+        title="Nos Services"
+        description="Une gamme complète de services en accessibilité numérique, adaptés aux besoins de votre organisation. De l'audit initial à l'accompagnement complet."
+      />
+      <main className="container mx-auto px-6 py-16">
+        <div className="max-w-4xl">
 
         {/* Service Packages */}
         <section className="mb-20">

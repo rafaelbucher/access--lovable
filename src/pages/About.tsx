@@ -1,14 +1,17 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { PageHero } from "@/components/PageHero";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-background pb-20">
+    <div className="min-h-screen bg-background">
       <Navigation />
-      <main className="container mx-auto px-6 py-24">
-        <h1 className="text-6xl md:text-8xl font-display font-bold mb-8">À propos</h1>
-        
+      <PageHero 
+        title="À propos"
+        description="Découvrez notre mission, nos valeurs et notre engagement pour l'accessibilité numérique. Une équipe passionnée au service d'un web accessible à tous."
+      />
+      <main className="container mx-auto px-6 py-16">
         <div className="max-w-4xl space-y-12">
           <section>
             <h2 className="text-4xl font-display font-bold mb-6">Notre mission</h2>
