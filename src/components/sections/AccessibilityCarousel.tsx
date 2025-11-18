@@ -108,15 +108,15 @@ export const AccessibilityCarousel = () => {
   ];
 
   return (
-    <section className="py-20 bg-secondary/30">
-      <div className="w-full px-0">
-        <div className="container mx-auto px-4 mb-16">
-          <h2 className="text-4xl md:text-5xl font-display mb-4 text-center text-foreground">
+    <section className="py-32 bg-secondary/30">
+      <div className="container mx-auto px-6">
+        <h2 className="text-5xl md:text-7xl font-display font-bold mb-8">
             5 règles essentielles d'accessibilité
-          </h2>
-          <p className="text-center text-muted-foreground mb-0 max-w-2xl mx-auto">
-            Découvrez les bonnes pratiques pour rendre votre site accessible à tous
-          </p>
+        </h2>
+        <div className="max-w-3xl mb-16">
+            <p className="text-lg mb-6">
+                Découvrez les bonnes pratiques pour rendre votre site accessible à tous
+            </p>
         </div>
 
         <Carousel 
