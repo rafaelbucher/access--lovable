@@ -12,7 +12,7 @@ export const PageHero = ({ title, description, className = "" }: PageHeroProps) 
           <h1 className="text-3xl md:text-6xl font-display font-bold leading-none mb-8">
             {title}
           </h1>
-          <p className="text-md md:text-xl max-w-2xl text-muted-foreground">
+          <p className="text-md md:text-xl mb-12 max-w-2xl">
             {description}
           </p>
         </div>
