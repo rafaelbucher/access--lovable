@@ -126,7 +126,7 @@ export const BurgerMenu = () => {
                         }`}
                       >
                         <div className={`text-2xl font-display font-bold mb-1 transition-colors ${
-                          isActive ? 'text-green-600' : 'hover:text-primary'
+                          isActive ? 'text-orange-200' : 'hover:text-primary'
                         }`}>
                           {item.label}
                         </div>
