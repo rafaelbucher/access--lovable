@@ -37,7 +37,9 @@ export const Hero = ({ onFlashAuditClick }: HeroProps) => {
       {/* Scroll indicator - absolute to hero section */}
       <div className="absolute bottom-4 right-0 left-0 md:hidden pointer-events-none">
         <div className="flex flex-col items-center animate-bounce">
+          
           <ChevronDown className="h-6 w-6 text-foreground" />
+          
         </div>
       </div>
     </section>
