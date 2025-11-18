@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "./NavLink";
 import { useIsMobile } from "../hooks/use-mobile";
+import { useLocation } from "react-router-dom";
 
 interface MenuItem {
   to: string;
@@ -35,6 +36,7 @@ export const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const isMobile = useIsMobile();
+  const location = useLocation();
 
   const toggleMenu = () => {
     if (!isOpen) {
@@ -103,28 +105,38 @@ export const BurgerMenu = () => {
             {/* Items de navigation */}
             <div className="flex-1 flex flex-col justify-center py-8">
               <div className="space-y-8">
-                {menuItems.map((item, index) => (
-                  <div 
-                    key={item.to} 
-                    className={`pb-4 transition-all duration-500 ${
-                      isOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-                    }`}
-                    style={{ 
-                      transitionDelay: `${200 + (index * 100)}ms`
-                    }}
-                  >
-                    <NavLink
-                      to={item.to}
-                      onClick={closeMenu}
-                      className="block text-2xl font-display font-bold mb-3 hover:text-primary transition-colors"
+                {menuItems.map((item, index) => {
+                  const isActive = location.pathname === item.to;
+                  
+                  return (
+                    <div 
+                      key={item.to} 
+                      className={`transition-all duration-500 ${
+                        isOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                      }`}
+                      style={{ 
+                        transitionDelay: `${200 + (index * 100)}ms`
+                      }}
                     >
-                      {item.label}
-                    </NavLink>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                ))}
+                      <NavLink
+                        to={item.to}
+                        onClick={closeMenu}
+                        className={`block pb-4 p-2 rounded-lg transition-all duration-200 hover:bg-accent/5 ${
+                          isActive ? 'bg-accent/10' : ''
+                        }`}
+                      >
+                        <div className={`text-2xl font-display font-bold mb-1 transition-colors ${
+                          isActive ? 'text-green-600' : 'hover:text-primary'
+                        }`}>
+                          {item.label}
+                        </div>
+                        <p className="text-xs text-muted-foreground leading-relaxed">
+                          {item.description}
+                        </p>
+                      </NavLink>
+                    </div>
+                  );
+                })}
               </div>
 
               {/* Footer dans la modale */}

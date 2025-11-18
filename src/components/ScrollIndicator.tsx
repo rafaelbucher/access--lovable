@@ -34,7 +34,7 @@ export const ScrollIndicator = () => {
   return (
     <button 
       onClick={handleClick}
-      className="hidden md:block fixed bottom-8 right-8 z-30 animate-bounce hover:text-accent transition-all duration-300 bg-background/80 backdrop-blur-sm rounded-full p-2 shadow-lg border"
+      className="hidden md:block fixed bottom-8 right-8 z-30 animate-bounce hover:text-accent transition-all duration-900 bg-background/80 backdrop-blur-sm rounded-full p-2"
       aria-label={isNearBottom ? "Remonter en haut" : "Défiler vers le bas"}
     >
       {isNearBottom ? (
