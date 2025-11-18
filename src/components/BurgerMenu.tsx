@@ -103,7 +103,7 @@ export const BurgerMenu = () => {
             </div>
 
             {/* Items de navigation */}
-            <div className="flex-1 flex flex-col justify-center py-8">
+            <div className="flex-1 flex flex-col justify-center py-6">
               <div className="space-y-8">
                 {menuItems.map((item, index) => {
                   const isActive = location.pathname === item.to;
@@ -121,7 +121,7 @@ export const BurgerMenu = () => {
                       <NavLink
                         to={item.to}
                         onClick={closeMenu}
-                        className={`block pb-4 p-2 rounded-lg transition-all duration-200 hover:bg-accent/5 ${
+                        className={`block pb-4 rounded-lg transition-all duration-200 hover:bg-accent/5 ${
                           isActive ? 'bg-accent/10' : ''
                         }`}
                       >

@@ -6,8 +6,8 @@ interface HeroProps {
 
 export const Hero = ({ onFlashAuditClick }: HeroProps) => {
   return (
-    <section id="hero" className="min-h-screen flex items-center relative">
-      <div className="container mx-auto px-6">
+    <section id="hero" className="min-h-screen flex items-end relative">
+      <div className="container mx-auto px-6 pb-20">
         <div className="max-w-5xl">
           <h1 className="text-3xl md:text-6xl font-display font-bold leading-none mb-8">
             Accessible ensemble!
