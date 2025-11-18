@@ -86,7 +86,7 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-4xl font-display font-bold mb-6">Parlons de votre projet</h2>
+              <h2 className="text-3xl md:text-6xl font-display font-bold mb-6">Parlons de votre projet</h2>
               <p className="text-lg leading-relaxed">
                 Vous avez un projet d'accessibilité numérique ? Une question sur nos services ? 
                 N'hésitez pas à nous contacter, nous serons ravis d'échanger avec vous.

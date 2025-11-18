@@ -77,7 +77,7 @@ export const BudgetEstimationModal = ({ isOpen, onClose }: BudgetEstimationModal
       </button>
 
       <div className="w-full max-w-2xl my-8">
-        <h2 className="text-5xl md:text-7xl font-display font-bold mb-6 text-center">
+        <h2 className="text-3xl md:text-6xl font-display font-bold mb-6 text-center">
           Estimez votre budget
         </h2>
         

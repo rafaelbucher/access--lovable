@@ -110,7 +110,7 @@ export const AccessibilityCarousel = () => {
   return (
     <section className="py-16 bg-secondary/30">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-5xl font-display font-bold mb-8">
+        <h2 className="text-3xl md:text-6xl font-display font-bold mb-8">
             5 règles essentielles d'accessibilité
         </h2>
         <div className="max-w-3xl mb-16">

@@ -21,14 +21,14 @@ const DesignSystem = () => {
 
         {/* Typography */}
         <section className="mb-16">
-          <h2 className="text-4xl font-display font-bold mb-8">Typographie</h2>
+          <h2 className="text-3xl md:text-6xl font-display font-bold mb-8">Typographie</h2>
           <div className="space-y-4">
             <div>
               <h1 className="text-6xl font-display font-bold">Heading 1 - Display Font</h1>
               <p className="text-sm text-muted-foreground">text-6xl font-display font-bold</p>
             </div>
             <div>
-              <h2 className="text-4xl font-display font-bold">Heading 2 - Display Font</h2>
+              <h2 className="text-3xl md:text-6xl font-display font-bold">Heading 2 - Display Font</h2>
               <p className="text-sm text-muted-foreground">text-4xl font-display font-bold</p>
             </div>
             <div>
@@ -48,7 +48,7 @@ const DesignSystem = () => {
 
         {/* Colors */}
         <section className="mb-16">
-          <h2 className="text-4xl font-display font-bold mb-8">Couleurs</h2>
+          <h2 className="text-3xl md:text-6xl font-display font-bold mb-8">Couleurs</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div>
               <div className="h-24 bg-background border-2 border-foreground mb-2"></div>
@@ -87,7 +87,7 @@ const DesignSystem = () => {
 
         {/* Buttons */}
         <section className="mb-16">
-          <h2 className="text-4xl font-display font-bold mb-8">Boutons</h2>
+          <h2 className="text-3xl md:text-6xl font-display font-bold mb-8">Boutons</h2>
           <div className="space-y-6">
             <div>
               <h3 className="text-xl font-display mb-4">Variants</h3>
@@ -132,7 +132,7 @@ const DesignSystem = () => {
 
         {/* Cards */}
         <section className="mb-16">
-          <h2 className="text-4xl font-display font-bold mb-8">Cards</h2>
+          <h2 className="text-3xl md:text-6xl font-display font-bold mb-8">Cards</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <Card>
               <CardHeader>
@@ -159,7 +159,7 @@ const DesignSystem = () => {
 
         {/* Badges */}
         <section className="mb-16">
-          <h2 className="text-4xl font-display font-bold mb-8">Badges</h2>
+          <h2 className="text-3xl md:text-6xl font-display font-bold mb-8">Badges</h2>
           <div className="flex flex-wrap gap-4">
             <Badge>Default</Badge>
             <Badge variant="secondary">Secondary</Badge>
@@ -172,7 +172,7 @@ const DesignSystem = () => {
 
         {/* Form Elements */}
         <section className="mb-16">
-          <h2 className="text-4xl font-display font-bold mb-8">Formulaires</h2>
+          <h2 className="text-3xl md:text-6xl font-display font-bold mb-8">Formulaires</h2>
           <div className="max-w-md space-y-6">
             <div>
               <Label htmlFor="input-demo">Input</Label>

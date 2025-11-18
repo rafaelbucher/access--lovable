@@ -18,7 +18,7 @@ const Services = () => {
 
         {/* Service Packages */}
         <section className="mb-20">
-          <h2 className="text-4xl font-display font-bold mb-12">Nos Offres</h2>
+          <h2 className="text-3xl md:text-6xl font-display font-bold mb-12">Nos Offres</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="border-2 border-foreground flex flex-col">
               <CardHeader>
@@ -131,7 +131,7 @@ const Services = () => {
 
         {/* Methodology */}
         <section className="mb-20">
-          <h2 className="text-4xl font-display font-bold mb-12">Notre Méthodologie</h2>
+          <h2 className="text-3xl md:text-6xl font-display font-bold mb-12">Notre Méthodologie</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="border-2 border-foreground">
               <CardHeader>
@@ -185,7 +185,7 @@ const Services = () => {
 
         {/* Why Choose Us */}
         <section className="bg-accent p-12 border-2 border-foreground">
-          <h2 className="text-4xl font-display font-bold mb-8">Pourquoi choisir Access+ ?</h2>
+          <h2 className="text-3xl md:text-6xl font-display font-bold mb-8">Pourquoi choisir Access+ ?</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <h3 className="text-2xl font-display font-bold mb-4">Expertise Reconnue</h3>

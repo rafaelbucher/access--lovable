@@ -43,7 +43,7 @@ export const BlogPreview = () => {
     <section className="py-16 px-6 bg-background">
       <div className="container mx-auto">
         <div className="max-w-3xl mb-12">
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">
+          <h2 className="text-3xl md:text-6xl font-display font-bold mb-6">
             Actualités & Ressources
           </h2>
           <p className="text-md leading-relaxed">

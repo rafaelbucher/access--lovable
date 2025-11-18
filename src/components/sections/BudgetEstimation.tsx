@@ -55,7 +55,7 @@ export const BudgetEstimation = () => {
     <section id="budget" className="py-32 bg-muted">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-8 text-center">
+          <h2 className="text-3xl md:text-6xl font-display font-bold mb-8 text-center">
             Estimez votre budget
           </h2>
           
