@@ -1,18 +1,26 @@
 import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
 
 interface HeroProps {
   onFlashAuditClick: () => void;
 }
 
 export const Hero = ({ onFlashAuditClick }: HeroProps) => {
+  const scrollToContent = () => {
+    const nextSection = document.querySelector('#hero + section, #hero + main');
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section id="hero" className="h-[100svh] max-h-[100svh] flex items-end relative overflow-hidden">
-      <div className="container mx-auto px-6 pb-16 md:pb-20">
+    <section id="hero" className="h-[100svh] max-h-[100svh] flex items-center justify-center relative overflow-hidden">
+      <div className="container mx-auto px-6">
         <div className="max-w-5xl">
           <h1 className="text-3xl md:text-6xl font-display font-bold leading-none mb-6 md:mb-8">
             Accessible ensemble!
           </h1>
-          <p className="text-md md:text-xl mb-8 md:mb-12 max-w-2xl">
+          <p className="text-md md:text-xl mb-8 md:mb-12 max-w-2xl mx-auto">
             Votre agence d'audit et de conseil en accessibilité numérique en Île-de-France. 
             Rendez votre site web conforme RGAA et accessible à tous.
           </p>
@@ -32,6 +40,17 @@ export const Hero = ({ onFlashAuditClick }: HeroProps) => {
             </Button>
           </div>
         </div>
+      </div>
+      
+      {/* Scroll indicator - only on mobile */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 md:hidden">
+        <button
+          onClick={scrollToContent}
+          className="p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300 animate-bounce"
+          aria-label="Défiler vers le contenu suivant"
+        >
+          <ChevronDown className="h-5 w-5 text-white" />
+        </button>
       </div>
     </section>
   );
