@@ -7,6 +7,7 @@ import { BlogPreview } from "@/components/sections/BlogPreview";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { FlashAuditModal } from "@/components/modals/FlashAuditModal";
+import { AccessibilityCarousel } from "@/components/sections/AccessibilityCarousel";
 
 const Index = () => {
   const [isFlashAuditOpen, setIsFlashAuditOpen] = useState(false);
@@ -21,6 +22,7 @@ const Index = () => {
         <Legislation />
         <Services />
         <Barriers />
+        <AccessibilityCarousel />
         <BlogPreview />
       </main>
       <Footer />
