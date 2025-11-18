@@ -83,7 +83,7 @@ export const BurgerMenu = () => {
         }`}>
           <div className="min-h-full flex flex-col px-6">
             {/* Header avec logo */}
-            <div className={`flex items-center py-4 transition-transform duration-400 delay-100 ${
+            <div className={`flex items-center py-4 ${
               isOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'
             }`}>
               <div className="flex flex-col">
