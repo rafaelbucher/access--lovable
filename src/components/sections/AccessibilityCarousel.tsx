@@ -108,63 +108,69 @@ export const AccessibilityCarousel = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-muted/30">
-      <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl md:text-5xl font-display mb-4 text-center">
-          5 règles essentielles d'accessibilité
-        </h2>
-        <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto">
-          Découvrez les bonnes pratiques pour rendre votre site accessible à tous
-        </p>
+    <section className="py-20 bg-secondary/30">
+      <div className="w-full px-0">
+        <div className="container mx-auto px-4 mb-16">
+          <h2 className="text-4xl md:text-5xl font-display mb-4 text-center text-foreground">
+            5 règles essentielles d'accessibilité
+          </h2>
+          <p className="text-center text-muted-foreground mb-0 max-w-2xl mx-auto">
+            Découvrez les bonnes pratiques pour rendre votre site accessible à tous
+          </p>
+        </div>
 
-        <Carousel className="w-full max-w-5xl mx-auto">
-          <CarouselContent>
+        <Carousel 
+          className="w-full"
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
             {rules.map((rule, index) => (
-              <CarouselItem key={index}>
-                <Card className="border-2 shadow-lg">
-                  <CardContent className="p-10">
-                    <div className="grid md:grid-cols-2 gap-12 items-start">
-                      {/* Left: Title & Description */}
-                      <div className="space-y-4">
-                        <h3 className="text-3xl font-display">{rule.title}</h3>
-                        <p className="text-muted-foreground text-lg">{rule.description}</p>
+              <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/3">
+                <Card className="border-2 border-border shadow-sm bg-card h-full">
+                  <CardContent className="p-6 flex flex-col h-full">
+                    {/* Title & Description */}
+                    <div className="space-y-3 mb-6">
+                      <h3 className="text-xl font-display text-foreground">{rule.title}</h3>
+                      <p className="text-muted-foreground text-sm">{rule.description}</p>
+                    </div>
+
+                    {/* Do & Don't Stacked */}
+                    <div className="space-y-4 flex-1">
+                      {/* Do Example */}
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-2 pb-2 border-b-2 border-secondary">
+                          <div className="w-6 h-6 rounded-full bg-secondary/30 flex items-center justify-center">
+                            <Check className="w-3.5 h-3.5 text-secondary-foreground" />
+                          </div>
+                          <span className="font-display text-sm font-semibold text-secondary-foreground">
+                            {rule.do.label}
+                          </span>
+                        </div>
+                        <pre className="bg-secondary/20 p-3 rounded overflow-x-auto text-xs border border-secondary/40">
+                          <code className="text-foreground font-mono not-italic font-normal">
+                            {rule.do.code}
+                          </code>
+                        </pre>
                       </div>
 
-                      {/* Right: Do & Don't in Row */}
-                      <div className="space-y-8">
-                        {/* Do Example */}
-                        <div className="space-y-4">
-                          <div className="flex items-center gap-3 pb-3 border-b-2 border-primary">
-                            <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                              <Check className="w-5 h-5 text-primary" />
-                            </div>
-                            <span className="font-display text-lg font-semibold text-primary">
-                              {rule.do.label}
-                            </span>
+                      {/* Don't Example */}
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-2 pb-2 border-b-2 border-destructive">
+                          <div className="w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center">
+                            <X className="w-3.5 h-3.5 text-destructive" />
                           </div>
-                          <pre className="bg-primary/5 p-5 rounded-lg overflow-x-auto text-sm border-2 border-primary/20">
-                            <code className="text-foreground font-mono not-italic font-normal">
-                              {rule.do.code}
-                            </code>
-                          </pre>
+                          <span className="font-display text-sm font-semibold text-destructive">
+                            {rule.dont.label}
+                          </span>
                         </div>
-
-                        {/* Don't Example */}
-                        <div className="space-y-4">
-                          <div className="flex items-center gap-3 pb-3 border-b-2 border-destructive">
-                            <div className="w-8 h-8 rounded-full bg-destructive/10 flex items-center justify-center">
-                              <X className="w-5 h-5 text-destructive" />
-                            </div>
-                            <span className="font-display text-lg font-semibold text-destructive">
-                              {rule.dont.label}
-                            </span>
-                          </div>
-                          <pre className="bg-destructive/5 p-5 rounded-lg overflow-x-auto text-sm border-2 border-destructive/20">
-                            <code className="text-foreground font-mono not-italic font-normal">
-                              {rule.dont.code}
-                            </code>
-                          </pre>
-                        </div>
+                        <pre className="bg-destructive/5 p-3 rounded overflow-x-auto text-xs border border-destructive/20">
+                          <code className="text-foreground font-mono not-italic font-normal">
+                            {rule.dont.code}
+                          </code>
+                        </pre>
                       </div>
                     </div>
                   </CardContent>
@@ -172,8 +178,12 @@ export const AccessibilityCarousel = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <div className="container mx-auto px-4 mt-8">
+            <div className="flex justify-center gap-4">
+              <CarouselPrevious className="static translate-y-0" />
+              <CarouselNext className="static translate-y-0" />
+            </div>
+          </div>
         </Carousel>
       </div>
     </section>
