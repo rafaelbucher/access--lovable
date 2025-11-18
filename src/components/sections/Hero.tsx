@@ -18,11 +18,10 @@ export const Hero = ({ onFlashAuditClick }: HeroProps) => {
       <div className="container mx-auto px-6">
         <div className="max-w-5xl">
           <h1 className="text-3xl md:text-6xl font-display font-bold leading-none mb-6 md:mb-8">
-            Accessible ensemble!
+            Rendre le web accessible à chacun, sans exception.
           </h1>
-          <p className="text-md md:text-xl mb-8 md:mb-12 max-w-2xl mx-auto">
-            Votre agence d'audit et de conseil en accessibilité numérique en Île-de-France. 
-            Rendez votre site web conforme RGAA et accessible à tous.
+          <p className="text-md text-muted-foreground font-normal md:text-xl mb-8 md:mb-12 max-w-2xl mx-auto">
+            access+ réalise vos audits, accompagne vos équipes et vous guide vers la mise en conformité légale et durable de vos interfaces numériques.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button 

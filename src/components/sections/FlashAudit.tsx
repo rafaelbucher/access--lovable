@@ -45,7 +45,7 @@ export const FlashAudit = () => {
             Audit flash gratuit
           </h2>
           
-          <p className="text-md mb-12 text-center">
+          <p className="text-md text-muted-foreground font-normal mb-12 text-center">
             Obtenez une première évaluation de l'accessibilité de votre site en quelques minutes. 
             Entrez l'URL d'une page et recevez un rapport PDF par email.
           </p>

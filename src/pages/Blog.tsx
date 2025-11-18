@@ -68,7 +68,7 @@ const Blog = () => {
       <main className="container mx-auto px-6 py-16">
         
         <div className="max-w-4xl mb-16">
-          <p className="text-xl leading-relaxed">
+          <p className="text-md text-muted-foreground font-normal leading-relaxed">
             Retrouvez nos articles, guides et actualités sur l'accessibilité numérique. 
             Nous partageons notre expertise pour vous aider à créer des expériences inclusives.
           </p>

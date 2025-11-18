@@ -53,6 +53,33 @@ export const BurgerMenu = () => {
     setTimeout(() => setIsVisible(false), 300);
   };
 
+  // Bloquer le scroll quand le menu est ouvert
+  useEffect(() => {
+    if (isOpen) {
+      // Sauvegarder la position actuelle du scroll
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
+    } else {
+      // Restaurer le scroll
+      const scrollY = document.body.style.top;
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      }
+    }
+
+    // Cleanup au démontage du composant
+    return () => {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+    };
+  }, [isOpen]);
+
   // N'afficher le burger menu que sur mobile
   if (!isMobile) {
     return null;
@@ -125,12 +152,13 @@ export const BurgerMenu = () => {
                           isActive ? 'bg-accent/10' : ''
                         }`}
                       >
-                        <div className={`text-2xl font-display font-bold mb-1 transition-colors ${
-                          isActive ? 'text-orange-200' : 'hover:text-primary'
-                        }`}>
+                        <div 
+                          className={`border-black inline pb-1 text-2xl font-display leading-relaxed hover:text-primary font-bold mb-1 transition-colors ${
+                            isActive ? 'border-black border-b-4' : ''
+                          }`}>
                           {item.label}
                         </div>
-                        <p className="text-xs text-muted-foreground leading-relaxed">
+                        <p className="text-xs mt-2 text-muted-foreground leading-relaxed hover:text-primary">
                           {item.description}
                         </p>
                       </NavLink>

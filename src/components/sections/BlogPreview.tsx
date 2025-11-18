@@ -46,7 +46,7 @@ export const BlogPreview = () => {
           <h2 className="text-3xl md:text-6xl font-display font-bold mb-6">
             Actualités & Ressources
           </h2>
-          <p className="text-md leading-relaxed">
+          <p className="text-md text-muted-foreground font-normal leading-relaxed">
             Découvrez nos derniers articles sur l'accessibilité numérique, 
             les bonnes pratiques et les évolutions réglementaires.
           </p>

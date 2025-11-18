@@ -28,15 +28,15 @@ export const Legislation = () => {
         </h2>
         
         <div className="max-w-3xl mb-16">
-          <p className="text-md mb-6">
+          <p className="text-md text-muted-foreground font-normal mb-6">
             Depuis la loi du <strong>11 février 2005</strong> pour l'égalité des droits et des chances, 
             l'accessibilité numérique est une obligation légale en France.
           </p>
-          <p className="text-md mb-6">
+          <p className="text-md text-muted-foreground font-normal mb-6">
             Le <strong>Référentiel Général d'Amélioration de l'Accessibilité (RGAA)</strong> définit 
             les critères techniques à respecter pour garantir l'accès aux contenus numériques pour tous.
           </p>
-          <p className="text-md">
+          <p className="text-md text-muted-foreground font-normal">
             La directive européenne sur l'accessibilité des sites internet et des applications mobiles 
             des organismes du secteur public impose également la conformité aux normes WCAG 2.1 niveau AA.
           </p>

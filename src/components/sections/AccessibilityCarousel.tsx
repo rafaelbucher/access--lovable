@@ -114,7 +114,7 @@ export const AccessibilityCarousel = () => {
             5 règles essentielles d'accessibilité
         </h2>
         <div className="max-w-3xl mb-16">
-            <p className="text-md mb-6">
+            <p className="text-md text-muted-foreground font-normal mb-6">
                 Découvrez les bonnes pratiques pour rendre votre site accessible à tous
             </p>
         </div>

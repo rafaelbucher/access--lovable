@@ -59,7 +59,7 @@ export const BudgetEstimation = () => {
             Estimez votre budget
           </h2>
           
-          <p className="text-md mb-12 text-center">
+          <p className="text-md text-muted-foreground font-normal mb-12 text-center">
             Répondez à quelques questions pour recevoir une estimation de budget 
             personnalisée pour votre audit d'accessibilité.
           </p>

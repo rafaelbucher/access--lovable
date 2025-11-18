@@ -15,11 +15,11 @@ const About = () => {
         <div className="max-w-4xl space-y-12">
           <section>
             <h2 className="text-3xl md:text-6xl font-display font-bold mb-6">Notre mission</h2>
-            <p className="text-lg leading-relaxed mb-4">
+            <p className="text-md text-muted-foreground font-normal leading-relaxed mb-4">
               Access+ est votre agence d'audit et de conseil en accessibilité numérique en Île-de-France. 
               Nous croyons fermement que le numérique doit être accessible à tous, sans exception.
             </p>
-            <p className="text-lg leading-relaxed">
+            <p className="text-md text-muted-foreground font-normal leading-relaxed">
               Notre mission est d'accompagner les organisations dans leur démarche d'accessibilité numérique, 
               en leur fournissant des solutions concrètes et adaptées à leurs besoins spécifiques.
             </p>

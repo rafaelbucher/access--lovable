@@ -53,11 +53,11 @@ export const Barriers = () => {
         </h2>
         
         <div className="max-w-3xl mb-16">
-          <p className="text-md mb-6">
+          <p className="text-md text-muted-foreground font-normal mb-6">
             Un site web accessible bénéficie à tous : meilleur référencement SEO, 
             expérience utilisateur améliorée, image de marque renforcée, et conformité légale.
           </p>
-          <p className="text-md">
+          <p className="text-md text-muted-foreground font-normal">
             Voici les principales barrières que rencontrent les utilisateurs en situation de handicap 
             sur des sites non accessibles :
           </p>
@@ -73,7 +73,7 @@ export const Barriers = () => {
                   </div>
                   <CardTitle className="text-2xl font-display">{barrier.title}</CardTitle>
                 </div>
-                <p className="text-base">{barrier.description}</p>
+                <p className="text-md text-muted-foreground font-normal">{barrier.description}</p>
               </CardHeader>
               <CardContent>
                 <h4 className="font-semibold mb-3">Exemples de barrières :</h4>
