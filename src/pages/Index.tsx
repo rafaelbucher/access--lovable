@@ -15,7 +15,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
+      <Navigation variant="default" />
       <main>
         <Hero 
           onFlashAuditClick={() => setIsFlashAuditOpen(true)}

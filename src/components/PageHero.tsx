@@ -6,7 +6,7 @@ interface PageHeroProps {
 
 export const PageHero = ({ title, description, className = "" }: PageHeroProps) => {
   return (
-    <section className={`min-h-[25vh] flex items-start relative overflow-hidden ${className}`}>
+    <section className={`min-h-[25vh] flex items-start relative overflow-hidden bg-accent ${className}`}>
       <div className="container mx-auto px-6 pt-32 pb-8 md:pb-8">
         <div className="max-w-5xl">
           <h1 className="text-3xl md:text-6xl font-display font-bold leading-none mb-6 md:mb-8">

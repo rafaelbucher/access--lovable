@@ -1,9 +1,15 @@
 import { NavLink } from "./NavLink";
 import { BurgerMenu } from "./BurgerMenu";
 
-export const Navigation = () => {
+interface NavigationProps {
+  variant?: "default" | "cream";
+}
+
+export const Navigation = ({ variant = "cream" }: NavigationProps) => {
+  const bgClass = variant === "default" ? "bg-background" : "bg-accent";
+  
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background border-t border-border" role="navigation" aria-label="Navigation principale">
+    <nav className={`fixed top-0 left-0 right-0 z-50 ${bgClass} border-t border-border`} role="navigation" aria-label="Navigation principale">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex flex-col">
