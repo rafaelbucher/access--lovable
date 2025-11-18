@@ -45,9 +45,9 @@ export const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-32">
+    <section id="services" className="py-16">
       <div className="container mx-auto px-6">
-        <h2 className="text-5xl md:text-7xl font-display font-bold mb-16">
+        <h2 className="text-3xl md:text-5xl font-display font-bold mb-16">
           Nos services
         </h2>
 
@@ -58,13 +58,13 @@ export const Services = () => {
               className={`${pkg.highlighted ? "border-4 border-accent" : "border-2"} flex flex-col`}
             >
               <CardHeader>
-                <CardTitle className="text-3xl font-display">{pkg.name}</CardTitle>
+                <CardTitle className="text-xl font-display">{pkg.name}</CardTitle>
                 <CardDescription className="text-lg">{pkg.description}</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6 flex flex-col h-full">
                 <div>
                   <span className="text-sm text-muted-foreground">À partir de </span>
-                  <span className="text-4xl font-display font-bold">{pkg.price}</span>
+                  <span className="text-xl font-display font-bold">{pkg.price}</span>
                 </div>
                 <ul className="space-y-3 flex-grow">
                   {pkg.features.map((feature, i) => (

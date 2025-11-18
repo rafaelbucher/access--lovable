@@ -108,13 +108,13 @@ export const AccessibilityCarousel = () => {
   ];
 
   return (
-    <section className="py-32 bg-secondary/30">
+    <section className="py-16 bg-secondary/30">
       <div className="container mx-auto px-6">
-        <h2 className="text-5xl md:text-7xl font-display font-bold mb-8">
+        <h2 className="text-3xl md:text-5xl font-display font-bold mb-8">
             5 règles essentielles d'accessibilité
         </h2>
         <div className="max-w-3xl mb-16">
-            <p className="text-lg mb-6">
+            <p className="text-md mb-6">
                 Découvrez les bonnes pratiques pour rendre votre site accessible à tous
             </p>
         </div>
@@ -133,7 +133,7 @@ export const AccessibilityCarousel = () => {
                   <CardContent className="p-6 flex flex-col h-full">
                     {/* Title & Description */}
                     <div className="space-y-3 mb-6">
-                      <h3 className="text-xl font-display text-foreground">{rule.title}</h3>
+                      <h3 className="text-3xl font-display text-foreground">{rule.title}</h3>
                       <p className="text-muted-foreground text-sm">{rule.description}</p>
                     </div>
 

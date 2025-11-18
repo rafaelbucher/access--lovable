@@ -46,18 +46,18 @@ export const Barriers = () => {
   ];
 
   return (
-    <section id="barriers" className="py-32 bg-muted">
+    <section id="barriers" className="py-16 bg-muted">
       <div className="container mx-auto px-6">
-        <h2 className="text-5xl md:text-7xl font-display font-bold mb-8">
+        <h2 className="text-3xl md:text-5xl font-display font-bold mb-8">
           Pourquoi l'accessibilité ?
         </h2>
         
         <div className="max-w-3xl mb-16">
-          <p className="text-lg mb-6">
+          <p className="text-md mb-6">
             Un site web accessible bénéficie à tous : meilleur référencement SEO, 
             expérience utilisateur améliorée, image de marque renforcée, et conformité légale.
           </p>
-          <p className="text-lg">
+          <p className="text-md">
             Voici les principales barrières que rencontrent les utilisateurs en situation de handicap 
             sur des sites non accessibles :
           </p>

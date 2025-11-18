@@ -55,11 +55,11 @@ export const BudgetEstimation = () => {
     <section id="budget" className="py-32 bg-muted">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-5xl md:text-7xl font-display font-bold mb-8 text-center">
+          <h2 className="text-3xl md:text-5xl font-display font-bold mb-8 text-center">
             Estimez votre budget
           </h2>
           
-          <p className="text-lg mb-12 text-center">
+          <p className="text-md mb-12 text-center">
             Répondez à quelques questions pour recevoir une estimation de budget 
             personnalisée pour votre audit d'accessibilité.
           </p>
