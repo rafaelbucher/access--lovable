@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "./NavLink";
 import { useIsMobile } from "../hooks/use-mobile";
 
@@ -33,14 +33,22 @@ const menuItems: MenuItem[] = [
 
 export const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const isMobile = useIsMobile();
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    if (!isOpen) {
+      setIsVisible(true);
+      setTimeout(() => setIsOpen(true), 10);
+    } else {
+      setIsOpen(false);
+      setTimeout(() => setIsVisible(false), 300);
+    }
   };
 
   const closeMenu = () => {
     setIsOpen(false);
+    setTimeout(() => setIsVisible(false), 300);
   };
 
   // N'afficher le burger menu que sur mobile
@@ -69,11 +77,15 @@ export const BurgerMenu = () => {
       </button>
 
       {/* Modale full screen */}
-      {isOpen && (
-        <div className="fixed inset-0 bg-white z-40 overflow-y-auto animate-in fade-in-0 duration-300">
+      {isVisible && (
+        <div className={`fixed inset-0 bg-white z-40 overflow-y-auto transition-opacity duration-300 ${
+          isOpen ? 'opacity-100' : 'opacity-0'
+        }`}>
           <div className="min-h-full flex flex-col px-6">
             {/* Header avec logo */}
-            <div className="flex items-center py-4 animate-in slide-in-from-top-2 duration-400 delay-100">
+            <div className={`flex items-center py-4 transition-transform duration-400 delay-100 ${
+              isOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'
+            }`}>
               <div className="flex flex-col">
                 <NavLink 
                   to="/" 
@@ -94,8 +106,12 @@ export const BurgerMenu = () => {
                 {menuItems.map((item, index) => (
                   <div 
                     key={item.to} 
-                    className="pb-6 animate-in slide-in-from-bottom-4 duration-500"
-                    style={{ animationDelay: `${200 + (index * 100)}ms` }}
+                    className={`pb-6 transition-all duration-500 ${
+                      isOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                    }`}
+                    style={{ 
+                      transitionDelay: `${200 + (index * 100)}ms`
+                    }}
                   >
                     <NavLink
                       to={item.to}
@@ -112,7 +128,9 @@ export const BurgerMenu = () => {
               </div>
 
               {/* Footer dans la modale */}
-              <div className="mt-auto pt-8 text-sm font-display text-muted-foreground text-white animate-in fade-in-0 duration-600 delay-500">
+              <div className={`mt-auto pt-8 text-sm font-display text-muted-foreground text-white transition-all duration-600 delay-500 ${
+                isOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+              }`}>
                 <p>© 2025 access+</p>
               </div>
             </div>
