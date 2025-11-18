@@ -107,7 +107,7 @@ export const BurgerMenu = () => {
 
       {/* Modale full screen */}
       {isVisible && (
-        <div className={`fixed inset-0 bg-white z-40 overflow-y-auto transition-opacity duration-300 ${
+        <div className={`fixed inset-0 bg-accent z-40 overflow-y-auto transition-opacity duration-300 ${
           isOpen ? 'opacity-100' : 'opacity-0'
         }`}>
           <div className="min-h-full flex flex-col px-6">
