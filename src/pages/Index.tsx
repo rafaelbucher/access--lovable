@@ -8,6 +8,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { FlashAuditModal } from "@/components/modals/FlashAuditModal";
 import { AccessibilityCarousel } from "@/components/sections/AccessibilityCarousel";
+import { ScrollIndicator } from "@/components/ScrollIndicator";
 
 const Index = () => {
   const [isFlashAuditOpen, setIsFlashAuditOpen] = useState(false);
@@ -26,6 +27,8 @@ const Index = () => {
         <BlogPreview />
       </main>
       <Footer />
+      
+      <ScrollIndicator />
       
       <FlashAuditModal 
         isOpen={isFlashAuditOpen} 

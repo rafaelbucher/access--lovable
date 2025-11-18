@@ -106,7 +106,7 @@ export const BurgerMenu = () => {
                 {menuItems.map((item, index) => (
                   <div 
                     key={item.to} 
-                    className={`pb-6 transition-all duration-500 ${
+                    className={`pb-4 transition-all duration-500 ${
                       isOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
                     }`}
                     style={{ 
