@@ -53,32 +53,32 @@ export const BurgerMenu = () => {
       {/* Bouton burger */}
       <button
         onClick={toggleMenu}
-        className="flex flex-col justify-center items-center w-8 h-8 relative z-50"
+        className="flex flex-col justify-start items-center w-4 h-8 relative z-50"
         aria-label="Menu de navigation"
         aria-expanded={isOpen}
       >
-        <span className={`bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${
-          isOpen ? 'bg-current rotate-45 translate-y-1' : '-translate-y-0.5'
+        <span className={`bg-black block transition-all duration-300 ease-out h-0.5 w-4 rounded-sm ${
+          isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'
         }`} />
-        <span className={`bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${
-          isOpen ? 'bg-current opacity-0' : 'opacity-100'
+        <span className={`bg-black block transition-all duration-300 ease-out h-0.5 w-4 rounded-sm my-0.5 ${
+          isOpen ? 'opacity-0' : 'opacity-100'
         }`} />
-        <span className={`bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${
-          isOpen ? 'bg-current -rotate-45 -translate-y-1' : 'translate-y-0.5'
+        <span className={`bg-black block transition-all duration-300 ease-out h-0.5 w-4 rounded-sm ${
+          isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'
         }`} />
       </button>
 
       {/* Modale full screen */}
       {isOpen && (
-        <div className="fixed inset-0 bg-current z-40 overflow-y-auto">
-          <div className="min-h-full flex flex-col px-4">
+        <div className="fixed inset-0 bg-white z-40 overflow-y-auto animate-in fade-in-0 duration-300">
+          <div className="min-h-full flex flex-col px-6">
             {/* Header avec logo */}
-            <div className="flex items-center py-4">
+            <div className="flex items-center py-4 animate-in slide-in-from-top-2 duration-400 delay-100">
               <div className="flex flex-col">
                 <NavLink 
                   to="/" 
                   onClick={closeMenu}
-                  className="text-3xl font-display font-bold italic text-white hover:no-underline"
+                  className="text-3xl font-display font-bold italic hover:no-underline"
                 >
                   access+
                 </NavLink>
@@ -91,12 +91,16 @@ export const BurgerMenu = () => {
             {/* Items de navigation */}
             <div className="flex-1 flex flex-col justify-center py-8">
               <div className="space-y-8">
-                {menuItems.map((item) => (
-                  <div key={item.to} className="border-b border-border pb-6 last:border-b-0">
+                {menuItems.map((item, index) => (
+                  <div 
+                    key={item.to} 
+                    className="pb-6 animate-in slide-in-from-bottom-4 duration-500"
+                    style={{ animationDelay: `${200 + (index * 100)}ms` }}
+                  >
                     <NavLink
                       to={item.to}
                       onClick={closeMenu}
-                      className="block text-2xl font-display text-white font-bold mb-3 hover:text-primary transition-colors"
+                      className="block text-2xl font-display font-bold mb-3 hover:text-primary transition-colors"
                     >
                       {item.label}
                     </NavLink>
@@ -108,8 +112,8 @@ export const BurgerMenu = () => {
               </div>
 
               {/* Footer dans la modale */}
-              <div className="mt-auto pt-8 text-center text-sm text-muted-foreground text-white">
-                <p>© 2024 access+ - Accessibilité web</p>
+              <div className="mt-auto pt-8 text-sm font-display text-muted-foreground text-white animate-in fade-in-0 duration-600 delay-500">
+                <p>© 2025 access+</p>
               </div>
             </div>
           </div>

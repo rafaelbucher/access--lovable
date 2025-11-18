@@ -4,7 +4,7 @@ import { BurgerMenu } from "./BurgerMenu";
 export const Navigation = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background border-t border-border" role="navigation" aria-label="Navigation principale">
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex flex-col">
             <NavLink 
