@@ -60,12 +60,12 @@ const blogPosts = [
 const Blog = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
+      <Navigation variant="default" />
       <PageHero 
         title="Blog"
         description="Articles, guides et conseils sur l'accessibilité web. Restez informé des dernières tendances et bonnes pratiques pour un numérique inclusif."
       />
-      <main className="container mx-auto px-6 py-16">
+      <main className="container mx-auto px-6 py-16 bg-background">
         
         <div className="max-w-4xl mb-16">
           <p className="text-md text-muted-foreground font-normal leading-relaxed">

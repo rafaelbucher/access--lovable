@@ -1,190 +1,103 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Check, X } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { 
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export const AccessibilityCarousel = () => {
   const rules = [
     {
       title: "Texte alternatif des images",
       description: "Chaque image doit avoir un texte alternatif descriptif pour les lecteurs d'écran",
-      do: {
-        label: "À faire",
-        code: `<img 
+      content: "Le texte alternatif (attribut alt) doit décrire le contenu et la fonction de l'image. Il permet aux utilisateurs de lecteurs d'écran de comprendre l'information véhiculée par l'image.",
+      code: `<img 
   src="chart.png" 
-  alt="Graphique montrant 
-  une augmentation de 25% 
-  des ventes en 2024"
+  alt="Graphique montrant une augmentation de 25% des ventes en 2024"
 />`
-      },
-      dont: {
-        label: "À éviter",
-        code: `<img 
-  src="chart.png" 
-  alt="image"
-/>`
-      }
     },
     {
       title: "Contrastes de couleurs",
       description: "Le contraste entre le texte et l'arrière-plan doit être suffisant (ratio 4.5:1 minimum)",
-      do: {
-        label: "À faire",
-        code: `.button {
-  background: #000;
-  color: #fff;
-  /* Contraste 21:1 ✓ */
+      content: "Un contraste suffisant entre le texte et son arrière-plan garantit la lisibilité pour tous, notamment pour les personnes malvoyantes ou dans des conditions d'éclairage difficiles.",
+      code: `.button {
+  background: #000000;
+  color: #ffffff;
+  /* Contraste optimal 21:1 */
 }`
-      },
-      dont: {
-        label: "À éviter",
-        code: `.button {
-  background: #ccc;
-  color: #ddd;
-  /* Contraste 1.4:1 ✗ */
-}`
-      }
-    },
-    {
-      title: "Focus clavier visible",
-      description: "Les éléments interactifs doivent avoir un indicateur de focus visible",
-      do: {
-        label: "À faire",
-        code: `a:focus {
-  outline: 3px solid #000;
-  outline-offset: 2px;
-}`
-      },
-      dont: {
-        label: "À éviter",
-        code: `a:focus {
-  outline: none;
-  /* Invisible ! */
-}`
-      }
-    },
-    {
-      title: "Navigation au clavier",
-      description: "Toutes les fonctionnalités doivent être accessibles au clavier uniquement",
-      do: {
-        label: "À faire",
-        code: `<button 
-  onClick={handleClick}
-  onKeyPress={handleKeyPress}
->
-  Action
-</button>`
-      },
-      dont: {
-        label: "À éviter",
-        code: `<div 
-  onClick={handleClick}
->
-  Action
-</div>`
-      }
     },
     {
       title: "Hiérarchie des titres",
       description: "Utiliser les balises de titre (h1-h6) dans l'ordre logique",
-      do: {
-        label: "À faire",
-        code: `<h1>Titre principal</h1>
-<h2>Sous-titre</h2>
-<h3>Section</h3>`
-      },
-      dont: {
-        label: "À éviter",
-        code: `<h1>Titre principal</h1>
-<h4>Sous-titre</h4>
-<h2>Section</h2>`
-      }
+      content: "Une hiérarchie de titres logique structure le contenu et facilite la navigation pour les utilisateurs de technologies d'assistance. Les niveaux ne doivent pas être sautés.",
+      code: `<h1>Titre principal</h1>
+<h2>Sous-section</h2>
+<h3>Détail de la section</h3>`
+    },
+    {
+      title: "Navigation au clavier",
+      description: "Toutes les fonctionnalités doivent être accessibles au clavier uniquement",
+      content: "Les utilisateurs qui ne peuvent pas utiliser une souris doivent pouvoir accéder à toutes les fonctionnalités via le clavier. Utilisez des éléments sémantiques appropriés.",
+      code: `<button 
+  onClick={handleClick}
+  onKeyDown={handleKeyDown}
+>
+  Action accessible
+</button>`
+    },
+    {
+      title: "Focus clavier visible",
+      description: "Les éléments interactifs doivent avoir un indicateur de focus visible",
+      content: "L'indicateur de focus permet aux utilisateurs naviguant au clavier de savoir quel élément est actuellement sélectionné. Il doit être clairement visible et contrasté.",
+      code: `a:focus, button:focus {
+  outline: 3px solid #000000;
+  outline-offset: 2px;
+}`
     }
   ];
 
   return (
-    <section className="py-16 bg-secondary/30">
+    <section id="accessibility-rules" className="py-16 bg-accent">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl md:text-6xl font-display font-bold mb-8">
-            5 règles essentielles d'accessibilité
+          5 règles essentielles d'accessibilité
         </h2>
-        <div className="max-w-3xl mb-16">
-            <p className="text-md text-muted-foreground font-normal mb-6">
-                Découvrez les bonnes pratiques pour rendre votre site accessible à tous
-            </p>
+        <div className="max-w-3xl mb-12">
+          <p className="text-md text-muted-foreground font-normal">
+            Découvrez les bonnes pratiques fondamentales pour rendre votre site accessible à tous
+          </p>
         </div>
 
-        <Carousel 
-          className="w-full"
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-        >
-          <CarouselContent className="-ml-2 md:-ml-4">
+        <div className="max-w-4xl">
+          <Accordion type="single" collapsible className="w-full">
             {rules.map((rule, index) => (
-              <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/3">
-                <Card className="border-2 border-border shadow-sm bg-card h-full">
-                  <CardContent className="p-6 flex flex-col h-full">
-                    {/* Title & Description */}
-                    <div className="space-y-3 mb-6">
-                      <h3 className="text-3xl font-display text-foreground">{rule.title}</h3>
-                      <p className="text-muted-foreground text-sm">{rule.description}</p>
-                    </div>
-
-                    {/* Do & Don't Stacked */}
-                    <div className="space-y-4 flex-1">
-                      {/* Do Example */}
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2 pb-2 border-b-2 border-secondary">
-                          <div className="w-6 h-6 rounded-full bg-secondary/30 flex items-center justify-center">
-                            <Check className="w-3.5 h-3.5 text-secondary-foreground" />
-                          </div>
-                          <span className="font-display text-sm font-semibold text-secondary-foreground">
-                            {rule.do.label}
-                          </span>
-                        </div>
-                        <pre className="bg-secondary/20 p-3 rounded overflow-x-auto text-xs border border-secondary/40">
-                          <code className="text-foreground font-mono not-italic font-normal">
-                            {rule.do.code}
-                          </code>
-                        </pre>
-                      </div>
-
-                      {/* Don't Example */}
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2 pb-2 border-b-2 border-destructive">
-                          <div className="w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center">
-                            <X className="w-3.5 h-3.5 text-destructive" />
-                          </div>
-                          <span className="font-display text-sm font-semibold text-destructive">
-                            {rule.dont.label}
-                          </span>
-                        </div>
-                        <pre className="bg-destructive/5 p-3 rounded overflow-x-auto text-xs border border-destructive/20">
-                          <code className="text-foreground font-mono not-italic font-normal">
-                            {rule.dont.code}
-                          </code>
-                        </pre>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
+              <AccordionItem key={index} value={`item-${index}`} className="border-b last:border-b-0">
+                <AccordionTrigger className="hover:no-underline pt-4 pb-2">
+                  <div className="text-left">
+                    <h3 className="text-lg font-display font-bold text-foreground">
+                      {rule.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground font-normal">
+                      {rule.description}
+                    </p>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pb-2 pt-2">
+                  <div className="space-y-3">
+                    <p className="text-muted-foreground">
+                      {rule.content}
+                    </p>
+                    <pre className="bg-muted p-3 text-sm overflow-x-auto">
+                      <code className="font-mono">
+                        {rule.code}
+                      </code>
+                    </pre>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </CarouselContent>
-          <div className="container mx-auto px-4 mt-8">
-            <div className="flex justify-center gap-4">
-              <CarouselPrevious className="static translate-y-0" />
-              <CarouselNext className="static translate-y-0" />
-            </div>
-          </div>
-        </Carousel>
+          </Accordion>
+        </div>
       </div>
     </section>
   );

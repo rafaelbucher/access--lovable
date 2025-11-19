@@ -6,12 +6,12 @@ import { PageHero } from "@/components/PageHero";
 const About = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
+      <Navigation variant="default" />
       <PageHero 
         title="À propos"
         description="Découvrez notre mission, nos valeurs et notre engagement pour l'accessibilité numérique. Une équipe passionnée au service d'un web accessible à tous."
       />
-      <main className="container mx-auto px-6 py-16">
+      <main className="container mx-auto px-6 py-16 bg-background">
         <div className="max-w-4xl space-y-12">
           <section>
             <h2 className="text-3xl md:text-6xl font-display font-bold mb-6">Notre mission</h2>

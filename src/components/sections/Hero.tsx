@@ -7,7 +7,7 @@ interface HeroProps {
 
 export const Hero = ({ onFlashAuditClick }: HeroProps) => {
   return (
-    <section id="hero" className="h-[100svh] max-h-[95svh] flex items-end relative overflow-hidden">
+    <section id="hero" className="h-[100svh] max-h-[95svh] flex items-end relative overflow-hidden bg-background">
       <div className="container mx-auto px-6 pb-16 md:pb-20">
         <div className="max-w-5xl">
           <h1 className="text-3xl md:text-6xl font-display font-bold leading-none mb-6 md:mb-8">
@@ -37,9 +37,9 @@ export const Hero = ({ onFlashAuditClick }: HeroProps) => {
       {/* Scroll indicator - absolute to hero section */}
       <div className="absolute bottom-4 right-0 left-0 md:hidden pointer-events-none">
         <div className="flex flex-col items-center animate-bounce">
-          
+
           <ChevronDown className="h-6 w-6 text-foreground" />
-          
+
         </div>
       </div>
     </section>

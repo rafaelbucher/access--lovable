@@ -76,12 +76,12 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
+      <Navigation variant="default" />
       <PageHero 
         title="Contact"
         description="Contactez-nous pour discuter de vos besoins en accessibilité web. Notre équipe est à votre disposition pour vous accompagner dans vos projets."
       />
-      <main className="container mx-auto px-6 py-16">
+      <main className="container mx-auto px-6 py-16 bg-background">
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl">
           {/* Contact Info */}
           <div className="space-y-8">

@@ -46,7 +46,7 @@ export const Barriers = () => {
   ];
 
   return (
-    <section id="barriers" className="py-16 bg-muted">
+    <section id="barriers" className="py-16 bg-accent">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl md:text-6xl font-display font-bold mb-8">
           Pourquoi l'accessibilité ?

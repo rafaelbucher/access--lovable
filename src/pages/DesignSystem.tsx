@@ -76,7 +76,7 @@ const DesignSystem = () => {
               <p className="text-sm text-muted-foreground">hsl(94 85% 93%)</p>
             </div>
             <div>
-              <div className="h-24 bg-muted mb-2"></div>
+              <div className="h-24 bg-accent mb-2"></div>
               <p className="font-bold">Muted</p>
               <p className="text-sm text-muted-foreground">hsl(0 0% 96%)</p>
             </div>

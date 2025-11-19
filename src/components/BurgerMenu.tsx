@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { NavLink } from "./NavLink";
 import { useIsMobile } from "../hooks/use-mobile";
 import { useLocation } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Phone, Eye } from "lucide-react";
 
 interface MenuItem {
   to: string;
@@ -148,7 +150,7 @@ export const BurgerMenu = () => {
                       <NavLink
                         to={item.to}
                         onClick={closeMenu}
-                        className={`block pb-4 rounded-lg transition-all duration-200 hover:bg-accent/5 ${
+                        className={`block rounded-lg transition-all duration-200 hover:bg-accent/5 ${
                           isActive ? 'bg-accent/10' : ''
                         }`}
                       >
@@ -173,6 +175,30 @@ export const BurgerMenu = () => {
               }`}>
                 <p>© 2025 access+</p>
               </div>
+            </div>
+
+            {/* CTA Section - Fixed bottom */}
+            <div className={`fixed bottom-0 left-0 right-0 w-full bg-accent p-6 space-y-4 transition-all duration-600 delay-600 ${
+              isOpen ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
+            }`}>
+              <Button 
+                variant="outline" 
+                className="w-full border-2 border-foreground bg-accent text-foreground hover:bg-foreground hover:text-background transition-all flex items-center justify-center gap-3"
+                size="lg"
+                onClick={closeMenu}
+              >
+                <Phone className="h-5 w-5" />
+                Discutons de votre projet
+              </Button>
+              <Button 
+                variant="default"
+                className="w-full bg-foreground text-background hover:bg-foreground/90 transition-all flex items-center justify-center gap-3"
+                size="lg"
+                onClick={closeMenu}
+              >
+                <Eye className="h-5 w-5" />
+                Lancer votre audit
+              </Button>
             </div>
           </div>
         </div>

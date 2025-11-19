@@ -7,9 +7,9 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
           {/* Logo and tagline */}
           <div>
-            <h3 className="text-3xl font-display font-bold mb-1">access+</h3>
+            <h3 className="text-3xl font-inter font-extrabold italic mb-1">access+</h3>
             <p className="text-xs text-muted-foreground max-w-md">
-              audit et conseil en accessibilité numérique
+              Rendre le web accessible à chacun, sans exception.
             </p>
             
             {/* Contact info */}
@@ -26,32 +26,25 @@ export const Footer = () => {
               </p>
             </div>
           </div>
-
-          {/* Quick Links */}
-          <div className="hidden md:block">
-            <div className="space-y-2 mt-12 text-left md:text-right">
-              <Link to="/services" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">
-                services
-              </Link>
-              <Link to="/blog" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">
-                blog
-              </Link>
-              <Link to="/a-propos" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">
-                à propos
-              </Link>
-              <Link to="/contact" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">
-                contact
-              </Link>
-              <Link to="/design-system" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">
-                système de design
-              </Link>
-            </div>
-          </div>
         </div>
-        <div className="pt-8 border-t border-border text-left">
-          <p className="text-xs text-black text-muted-foreground">
-            © {new Date().getFullYear()} access+ - <Link to="/mentions-legales" className="hover:text-foreground transition-colors">Mentions légales</Link>
+        <div className="pt-8 border-t border-border text-left flex justify-between items-center">
+          <p className="text-xs text-foreground">
+            © {new Date().getFullYear()} access+ - <Link to="/mentions-legales" className="hover:text-muted-foreground transition-colors">Mentions légales</Link>
           </p>
+          <div className="hidden md:flex gap-4">
+            <Link to="/services" className="nav-accessible text-sm text-foreground hover:text-foreground transition-colors">
+              services
+            </Link>
+            <Link to="/blog" className="nav-accessible text-sm text-foreground hover:text-foreground transition-colors">
+              blog
+            </Link>
+            <Link to="/a-propos" className="nav-accessible text-sm text-foreground hover:text-foreground transition-colors">
+              à propos
+            </Link>
+            <Link to="/contact" className="nav-accessible text-sm text-foreground hover:text-foreground transition-colors">
+              contact
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

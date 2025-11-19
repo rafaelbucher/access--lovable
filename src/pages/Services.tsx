@@ -8,16 +8,16 @@ import { PageHero } from "@/components/PageHero";
 const Services = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
+      <Navigation variant="default" />
       <PageHero 
         title="Nos Services"
         description="Une gamme complète de services en accessibilité numérique, adaptés aux besoins de votre organisation. De l'audit initial à l'accompagnement complet."
       />
-      <main className="container mx-auto px-6 py-16">
+      <main className="container mx-auto px-6 py-16 bg-background">
         <div className="max-w-4xl">
 
         {/* Service Packages */}
-        <section className="mb-20">
+        <section id="services-packages" className="mb-20 bg-background">
           <h2 className="text-3xl md:text-6xl font-display font-bold mb-12">Nos Offres</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="border-2 border-foreground flex flex-col">
@@ -130,7 +130,7 @@ const Services = () => {
         </section>
 
         {/* Methodology */}
-        <section className="mb-20">
+        <section id="methodology" className="mb-20 bg-background">
           <h2 className="text-3xl md:text-6xl font-display font-bold mb-12">Notre Méthodologie</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="border-2 border-foreground">

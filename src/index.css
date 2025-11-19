@@ -93,13 +93,93 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Playfair Display', serif;
-    font-weight: 100;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.6; /* WCAG recommande 1.5 minimum, 1.6 optimal */
+    letter-spacing: 0.01em; /* Légère amélioration de lisibilité */
+    font-size: 18px; /* Taille de base plus confortable */
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'PT Serif', serif;
     font-style: italic;
+    line-height: 1.2; /* Plus serré pour les titres */
+    letter-spacing: -0.02em; /* Espacement légèrement négatif pour les grandes tailles */
+    font-weight: 700; /* Poids plus marqué pour le contraste visuel */
+    margin-bottom: 0.75em; /* Espacement cohérent */
+  }
+
+  /* Ajustements spécifiques par taille de titre */
+  h1 {
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+
+  h2 {
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+  }
+
+  p {
+    margin-bottom: 1em;
+    max-width: 65ch; /* Longueur de ligne optimale pour la lecture */
+  }
+
+  /* Amélioration du focus pour l'accessibilité */
+  a, button, [tabindex] {
+    &:focus-visible {
+      outline: 3px solid currentColor;
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+  }
+
+  /* Styles d'accessibilité pour les liens de navigation */
+  .nav-accessible {
+    min-height: 44px; /* Taille minimum accessible */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 4px;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .nav-accessible:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+  }
+
+  .nav-accessible:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 2px;
+    background-color: rgba(0, 0, 0, 0.1);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .nav-accessible-vertical {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .nav-accessible-vertical:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+  }
+
+  .nav-accessible-vertical:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 2px;
+    background-color: rgba(0, 0, 0, 0.1);
+    text-decoration: underline;
+    text-underline-offset: 4px;
   }
 
   html {
@@ -109,6 +189,71 @@ All colors MUST be HSL.
 
 @layer utilities {
   .font-display {
+    font-family: 'PT Serif', serif;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+
+  .font-inter {
     font-family: 'Inter', sans-serif;
+    letter-spacing: 0.02em; /* Espacement plus marqué pour le logo */
+    line-height: 1.1;
+  }
+
+  /* Classes utilitaires pour la lisibilité */
+  .text-readable {
+    line-height: 1.65;
+    letter-spacing: 0.01em;
+    max-width: 65ch;
+  }
+
+  .text-title {
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .text-large {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.7;
+    letter-spacing: 0.005em;
+  }
+
+  /* Classes pour navigation et CTA accessibles */
+  .nav-link {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.025em;
+    line-height: 1.4;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .nav-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+  }
+
+  .nav-link:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  .cta-button {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    min-height: 48px; /* Taille minimum accessible */
+    padding: 12px 24px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .cta-button:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 1px currentColor;
   }
 }

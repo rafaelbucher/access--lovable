@@ -40,7 +40,7 @@ const blogPosts = [
 
 export const BlogPreview = () => {
   return (
-    <section className="py-16 px-6 bg-background">
+    <section id="blog-preview" className="py-16 px-6 bg-background">
       <div className="container mx-auto">
         <div className="max-w-3xl mb-12">
           <h2 className="text-3xl md:text-6xl font-display font-bold mb-6">
