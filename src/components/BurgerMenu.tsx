@@ -3,7 +3,7 @@ import { NavLink } from "./NavLink";
 import { useIsMobile } from "../hooks/use-mobile";
 import { useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Phone, Eye } from "lucide-react";
+import { Phone, PersonStanding } from "lucide-react";
 
 interface MenuItem {
   to: string;
@@ -196,7 +196,7 @@ export const BurgerMenu = () => {
                 size="lg"
                 onClick={closeMenu}
               >
-                <Eye className="h-5 w-5" />
+                <PersonStanding className="h-5 w-5" />
                 Lancer votre audit
               </Button>
             </div>
