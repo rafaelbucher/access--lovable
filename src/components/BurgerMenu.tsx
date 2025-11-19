@@ -155,8 +155,8 @@ export const BurgerMenu = () => {
                         }`}
                       >
                         <div 
-                          className={`border-black inline pb-1 text-2xl font-display leading-relaxed hover:text-primary font-bold mb-1 transition-colors ${
-                            isActive ? 'border-black border-b-4' : ''
+                          className={`border-black inline pb-1 mb-1 text-2xl font-inter italic leading-relaxed hover:text-primary font-bold mb-1 transition-colors ${
+                            isActive ? 'border-black border-b-2' : ''
                           }`}>
                           {item.label}
                         </div>

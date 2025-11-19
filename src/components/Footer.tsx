@@ -9,7 +9,7 @@ export const Footer = () => {
           <div>
             <h3 className="text-3xl font-inter font-extrabold italic mb-1">access+</h3>
             <p className="text-xs text-muted-foreground max-w-md">
-              Rendre le web accessible à chacun, sans exception.
+              audit et conseil en accessibilité numérique
             </p>
             
             {/* Contact info */}

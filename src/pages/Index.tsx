@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Hero } from "@/components/sections/Hero";
 import { Legislation } from "@/components/sections/Legislation";
+import { CtaBanner } from "@/components/sections/CtaBanner";
 import { Services } from "@/components/sections/Services";
 import { Barriers } from "@/components/sections/Barriers";
 import { BlogPreview } from "@/components/sections/BlogPreview";
@@ -21,6 +22,9 @@ const Index = () => {
           onFlashAuditClick={() => setIsFlashAuditOpen(true)}
         />
         <Legislation />
+        <CtaBanner 
+          onFlashAuditClick={() => setIsFlashAuditOpen(true)}
+        />
         <Services />
         <Barriers />
         <AccessibilityCarousel />

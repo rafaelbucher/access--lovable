@@ -45,7 +45,7 @@ export const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-16 bg-background">
+    <section id="services" className="py-16 bg-accent">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl md:text-6xl font-display font-bold mb-16">
           Nos services
