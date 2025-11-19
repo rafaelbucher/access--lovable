@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Phone } from "lucide-react";
 
 interface HeroProps {
   onFlashAuditClick: () => void;
@@ -19,10 +19,12 @@ export const Hero = ({ onFlashAuditClick }: HeroProps) => {
           <div className="flex flex-wrap gap-4">
             <Button 
               size="lg" 
-              className="bg-accent text-accent-foreground hover:bg-accent/90 w-full md:w-auto"
+              variant="outline"
+              className="w-full md:w-auto border-2 border-foreground bg-accent text-foreground hover:bg-foreground hover:text-background transition-all flex items-center justify-center gap-3"
               onClick={onFlashAuditClick}
             >
-              Demander un audit flash
+              <Phone className="h-5 w-5" />
+              Discutons de votre projet
             </Button>
             <Button 
               size="lg" 

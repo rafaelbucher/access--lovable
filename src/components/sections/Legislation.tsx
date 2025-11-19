@@ -23,37 +23,42 @@ export const Legislation = () => {
   return (
     <section id="legislation" className="py-16 bg-accent">
       <div className="container mx-auto px-6">
+        {/* Titre sur toute la largeur */}
         <h2 className="text-3xl md:text-6xl font-display font-bold mb-16">
-          La législation <br />française
+          La législation française
         </h2>
         
-        <div className="max-w-3xl mb-16">
-          <p className="text-md text-muted-foreground font-normal mb-6">
-            Depuis la loi du <strong>11 février 2005</strong> pour l'égalité des droits et des chances, 
-            l'accessibilité numérique est une obligation légale en France.
-          </p>
-          <p className="text-md text-muted-foreground font-normal mb-6">
-            Le <strong>Référentiel Général d'Amélioration de l'Accessibilité (RGAA)</strong> définit 
-            les critères techniques à respecter pour garantir l'accès aux contenus numériques pour tous.
-          </p>
-          <p className="text-md text-muted-foreground font-normal">
-            La directive européenne sur l'accessibilité des sites internet et des applications mobiles 
-            des organismes du secteur public impose également la conformité aux normes WCAG 2.1 niveau AA.
-          </p>
-        </div>
+        <div className="grid md:grid-cols-2 gap-16 items-start">
+          {/* Colonne 1 : Texte */}
+          <div className="space-y-6">
+            <p className="text-md text-muted-foreground font-normal">
+              Depuis la loi du <strong className="text-black">11 février 2005</strong> pour l'égalité des droits et des chances, 
+              l'accessibilité numérique est une obligation légale en France.
+            </p>
+            <p className="text-md text-muted-foreground font-normal">
+              Le <strong className="text-black">Référentiel Général d'Amélioration de l'Accessibilité (RGAA)</strong> définit 
+              les critères techniques à respecter pour garantir l'accès aux contenus numériques pour tous.
+            </p>
+            <p className="text-md text-muted-foreground font-normal">
+              La directive européenne sur l'accessibilité des sites internet et des applications mobiles 
+              des organismes du secteur public impose également la conformité aux normes WCAG 2.1 niveau AA.
+            </p>
+          </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {stats.map((stat, index) => (
-            <Card key={index} className="p-8 shadow-md">
-              <div className="flex items-center gap-3 mb-4">
-                <stat.icon className="h-8 w-8 text-foreground flex-shrink-0" />
-                <div className="text-3xl font-display font-bold">
-                  {stat.number}
+          {/* Colonne 2 : Chiffres clés - Design minimaliste */}
+          <div className="space-y-6">
+            {stats.map((stat, index) => (
+              <div key={index} className="pl-0">
+                <div className="flex items-center gap-4 mb-3">
+                  <stat.icon className="h-8 w-8 text-foreground" />
+                  <div className="text-4xl font-display font-bold text-foreground">
+                    {stat.number}
+                  </div>
                 </div>
+                <p className="text-base text-muted-foreground leading-relaxed">{stat.label}</p>
               </div>
-              <p className="text-foreground/80">{stat.label}</p>
-            </Card>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

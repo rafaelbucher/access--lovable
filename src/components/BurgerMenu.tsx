@@ -121,7 +121,7 @@ export const BurgerMenu = () => {
                 <NavLink 
                   to="/" 
                   onClick={closeMenu}
-                  className="text-3xl font-display font-bold italic hover:no-underline"
+                  className="text-3xl font-inter font-extrabold italic hover:no-underline"
                 >
                   access+
                 </NavLink>
