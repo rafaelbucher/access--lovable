@@ -1,11 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Phone } from "lucide-react";
+import { ChevronDown, Phone, PersonStanding } from "lucide-react";
 
 interface HeroProps {
   onFlashAuditClick: () => void;
+  onContactClick: () => void;
 }
 
-export const Hero = ({ onFlashAuditClick }: HeroProps) => {
+export const Hero = ({ onFlashAuditClick, onContactClick }: HeroProps) => {
   return (
     <section id="hero" className="h-[100svh] max-h-[95svh] flex items-end relative overflow-hidden bg-background">
       <div className="container mx-auto px-6 pb-16 md:pb-20">
@@ -17,6 +18,15 @@ export const Hero = ({ onFlashAuditClick }: HeroProps) => {
             access+ réalise vos audits, accompagne vos équipes et vous guide vers la mise en conformité légale et durable de vos interfaces numériques.
           </p>
           <div className="flex flex-wrap gap-4">
+            <Button 
+              size="lg"
+              variant="default"
+              className="w-full md:w-auto bg-foreground text-background hover:bg-foreground/90 transition-all flex items-center justify-center gap-3"
+              onClick={onContactClick}
+            >
+              <PersonStanding className="h-5 w-5" />
+              Lancer votre audit
+            </Button>
             <Button 
               size="lg" 
               variant="outline"

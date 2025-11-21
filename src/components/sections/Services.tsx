@@ -55,7 +55,7 @@ export const Services = () => {
           {packages.map((pkg, index) => (
             <Card 
               key={index} 
-              className={`${pkg.highlighted ? "border-4 border-accent" : "border-2"} flex flex-col`}
+              className={`${pkg.highlighted ? "shadow-xl" : "hover:shadow-xl"} flex flex-col`}
             >
               <CardHeader>
                 <CardTitle className="text-xl font-display">{pkg.name}</CardTitle>

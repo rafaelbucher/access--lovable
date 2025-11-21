@@ -3,13 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 
 const blogPosts = [
   {
@@ -52,8 +45,8 @@ export const BlogPreview = () => {
           </p>
         </div>
 
-        {/* Desktop: Grid layout */}
-        <div className="hidden md:grid md:grid-cols-3 gap-8 mb-12">
+        {/* Simple grid layout */}
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
           {blogPosts.map((post) => (
             <Card key={post.id} className="border-2 border-foreground flex flex-col hover:shadow-lg transition-shadow">
               <CardHeader>
@@ -79,43 +72,6 @@ export const BlogPreview = () => {
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* Mobile: Carousel */}
-        <div className="md:hidden mb-12">
-          <Carousel className="w-full">
-            <CarouselContent>
-              {blogPosts.map((post) => (
-                <CarouselItem key={post.id}>
-                  <Card className="border-2 border-foreground flex flex-col h-full">
-                    <CardHeader>
-                      <div className="flex items-center gap-2 mb-3">
-                        <Badge variant="secondary">{post.category}</Badge>
-                        <span className="text-sm text-muted-foreground flex items-center gap-1">
-                          <Calendar className="w-4 h-4" />
-                          {post.date}
-                        </span>
-                      </div>
-                      <CardTitle className="text-2xl">{post.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="flex-1 flex flex-col">
-                      <CardDescription className="text-base mb-4 flex-1">
-                        {post.excerpt}
-                      </CardDescription>
-                      <div className="flex items-center justify-between mt-auto pt-4 border-t">
-                        <span className="text-sm text-muted-foreground">{post.readTime} de lecture</span>
-                        <Button variant="link" className="p-0 h-auto font-bold">
-                          Lire →
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
         </div>
 
         <div className="text-center">
